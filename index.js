@@ -62,9 +62,7 @@ app.post("/text-to-speech", (req, res) => {
       synthesizer = null;
 
       // Simulate the conversion process
-      const audioUrl = `${req.protocol}://${req.get(
-        "host"
-      )}/files/${audioFile}`;
+      const audioUrl = `https://${req.get("host")}/files/${audioFile}`;
 
       res.json({ audioUrl, visemes });
     },
